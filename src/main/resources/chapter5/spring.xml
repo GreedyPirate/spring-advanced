@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean name="mtw,mosi,car" class="com.ttyc.spring.chapter5.inject.name.Car" p:name="mtw" p:color="black"></bean>
+
+    <bean class="com.ttyc.spring.chapter5.inject.name.Student"/>
+
+    <bean id="upper" class="com.ttyc.spring.chapter5.inject.name.bug.UpperCase">
+        <property name="cPU" value="intel"/>
+    </bean>
+
+    <!-- 普通工厂要自身先成为bean，麻烦 -->
+    <bean id="normalFactory" class="com.ttyc.spring.chapter5.inject.factory.NomalFactory"></bean>
+    <bean id="normalCar" factory-bean="normalFactory" factory-method="createCar"/>
+
+    <!-- 静态工厂指定静态方法即可 -->
+    <bean id="staticCar" class="com.ttyc.spring.chapter5.inject.factory.StaticCarFactory" factory-method="createCar"/>
+
+    <bean id="oneCar" scope="prototype" class="com.ttyc.spring.chapter5.inject.prototype.Car" p:name="bench" p:color="red"/>
+    <bean id="bigBoss" class="com.ttyc.spring.chapter5.inject.prototype.MultiCar">
+        <lookup-method name="getCar" bean="oneCar"/>
+    </bean>
+    <bean id="poor" class="com.ttyc.spring.chapter5.inject.prototype.Poor">
+        <property name="car">
+            <idref bean="oneCar"/>
+        </property>
+    </bean>
+
+    <bean id="carPapa" class="com.ttyc.spring.chapter5.relation.extend.Car" abstract="true" p:name="Bench"/>
+    <bean id="son" parent="carPapa" class="com.ttyc.spring.chapter5.relation.extend.Car" p:color="blue"/>
+
+    <bean id="first" class="com.ttyc.spring.chapter5.relation.dependen.Car"/>
+    <bean id="second" class="com.ttyc.spring.chapter5.relation.dependen.Car" depends-on="first"/>
+
+    <bean id="beanctl" class="com.ttyc.spring.chapter5.inject.beanctl.Car" p:name="bwt,aos,ttl" p:color="blue"/>
+
+</beans>

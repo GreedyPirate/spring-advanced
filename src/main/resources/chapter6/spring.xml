@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 根据Java bean规范，只要符合Car ——> CarEditor ,不用配置也行 -->
+
+    <!--<bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+        <property name="customEditors">
+            <map>
+                <entry key="com.ttyc.spring.chapter6.editor.Car" value="com.ttyc.spring.chapter6.editor.CarEditor">
+                </entry>
+            </map>
+        </property>
+    </bean>-->
+
+
+    <bean id="boss" class="com.ttyc.spring.chapter6.editor.Boss">
+        <property name="car" value="btw,red"/>
+    </bean>
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:chapter6/db1.properties</value>
+                <value>classpath:chapter6/db2.properties</value>
+            </list>
+        </property>
+        <property name="placeholderPrefix" value="${"/>
+        <property name="placeholderSuffix" value="}"/>
+        <property name="fileEncoding" value="utf-8"/>
+    </bean>
+
+    <bean id="dataBase" class="com.ttyc.spring.chapter6.properties.DataBase">
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <property name="host" value="${jdbc.host}"/>
+        <property name="port" value="${jdbc.port}"/>
+    </bean>
+
+    <!-- 根据order属性覆盖了默认的PropertyPlaceholderConfigurer -->
+    <bean class="com.ttyc.spring.chapter6.properties.encrypt.EncryptPlaceHolder">
+        <property name="locations">
+            <list>
+                <value>classpath:chapter6/db1.properties</value>
+                <value>classpath:chapter6/db2.properties</value>
+            </list>
+        </property>
+        <property name="order" value="#{T(java.lang.Integer).MAX_VALUE + 1}"/>
+    </bean>
+
+    <bean id="encryptDataBase" class="com.ttyc.spring.chapter6.properties.DataBase">
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+        <property name="host" value="${jdbc.host}"/>
+        <property name="port" value="${jdbc.port}"/>
+    </bean>
+
+    <bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basenames">
+            <list>
+                <value>chapter6/i18n/resource</value>
+            </list>
+        </property>
+        <!-- 每10秒刷新一次 -->
+        <property name="cacheSeconds" value="5"/>
+    </bean>
+</beans>

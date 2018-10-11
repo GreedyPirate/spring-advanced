@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="target" class="com.ttyc.spring.chapter7.proxy.helper.UserDaoImpl"/>
+
+    <bean id="beforeDao" class="com.ttyc.spring.chapter7.advice.before.DaoBeforeAdvice"/>
+    <bean id="afterDao" class="com.ttyc.spring.chapter7.advice.after.DaoAfterAdvice"/>
+    <bean id="throwsDao" class="com.ttyc.spring.chapter7.advice.error.DaoThrowsAdvice"/>
+    <bean id="introduUserDao" class="com.ttyc.spring.chapter7.advice.introduction.IntroductionAdvice"/>
+
+    <!-- 可以配置多个advice，多个target bean -->
+    <bean id="proxyFactory" class="org.springframework.aop.framework.ProxyFactoryBean" p:proxyInterfaces="com.ttyc.spring.chapter7.proxy.helper.UserDao"
+          p:interceptorNames="beforeDao,afterDao,throwsDao,introduUserDao" p:target-ref="target" p:optimize="true" p:proxyTargetClass="true"/>
+</beans>
