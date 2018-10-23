@@ -12,6 +12,8 @@ import org.springframework.util.Assert;
  * 每次new同一个Boss，但是返回不同的车
  *
  * Spring 提供lookup-method机制，通过CGlib动态代理
+ *
+ * 实际开发中难道不是用集合去表示？？
  */
 public class PrototypeTest {
     public static void main(String[] args) {
