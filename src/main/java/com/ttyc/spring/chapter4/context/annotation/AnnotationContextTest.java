@@ -11,7 +11,7 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 public class AnnotationContextTest {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(JavaConfig.class);
-        Car car = (Car) context.getBean("car");
+        Car car = (Car) context.getBean("car" );
         System.out.println(car.getColor());
     }
 }

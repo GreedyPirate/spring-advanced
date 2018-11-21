@@ -7,9 +7,9 @@ import org.springframework.util.Assert;
 
 public class ExecutionTest {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("chapter8/spring.xml");
-        UserService userService = (UserService) context.getBean("userService");
+        ApplicationContext context = new ClassPathXmlApplicationContext("chapter8/spring.xml" );
+        UserService userService = (UserService) context.getBean("userService" );
         String ret = userService.login(1);
-        Assert.state(ret.equals("SUCCESS"),"failed");
+        Assert.state(ret.equals("SUCCESS" ), "failed" );
     }
 }

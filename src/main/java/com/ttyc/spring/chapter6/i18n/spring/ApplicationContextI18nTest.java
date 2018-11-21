@@ -8,8 +8,8 @@ import java.util.Locale;
 
 public class ApplicationContextI18nTest {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("chapter6/spring.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("chapter6/spring.xml" );
         String name = context.getMessage("name", null, Locale.CHINA);
-        Assert.isTrue(name.equals("紫夜"), "error name");
+        Assert.isTrue(name.equals("紫夜" ), "error name" );
     }
 }

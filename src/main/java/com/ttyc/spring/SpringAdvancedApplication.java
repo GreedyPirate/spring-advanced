@@ -14,7 +14,7 @@ public class SpringAdvancedApplication {
 //        SpringApplication.run(SpringAdvancedApplication.class, args);
 
         ConfigurableApplicationContext context = SpringApplication.run(SpringAdvancedApplication.class, args);
-        ApplicationListener<RequestHandledEvent> requestListener = (ApplicationListener<RequestHandledEvent>) context.getBean("requestListener");
+        ApplicationListener<RequestHandledEvent> requestListener = (ApplicationListener<RequestHandledEvent>) context.getBean("requestListener" );
         context.addApplicationListener(requestListener);
     }
 }

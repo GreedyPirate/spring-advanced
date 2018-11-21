@@ -16,8 +16,8 @@ public class IntroductionAdvice extends DelegatingIntroductionInterceptor implem
 
     @Override
     public Object invoke(MethodInvocation mi) throws Throwable {
-        if(needable()){
-            System.out.println("need metric");
+        if (needable()) {
+            System.out.println("need metric" );
         }
         return super.invoke(mi);
     }

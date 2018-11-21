@@ -6,8 +6,8 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class JavaConfig {
     @Bean
-    Car car(){
-        return new Car("bmw","red");
+    Car car() {
+        return new Car("bmw", "red" );
     }
 }
 

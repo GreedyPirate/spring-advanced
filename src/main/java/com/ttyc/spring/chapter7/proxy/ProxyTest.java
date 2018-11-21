@@ -13,13 +13,13 @@ public class ProxyTest {
 
         UserDao proxyClass = (UserDao) Proxy.newProxyInstance(userDao.getClass().getClassLoader(), userDao.getClass().getInterfaces(), handler);
         String name = proxyClass.getName();
-        Assert.isTrue(name.equals("jay"), "proxy failed");
+        Assert.isTrue(name.equals("jay" ), "proxy failed" );
 
 
         CglibProxy cglibProxy = new CglibProxy();
         UserDaoImpl proxy = (UserDaoImpl) cglibProxy.getProxy(UserDaoImpl.class);
         System.out.println("代理类名：" + proxy.getClass().getSimpleName());
         name = proxy.getName();
-        Assert.isTrue(name.equals("jay"), "proxy failed");
+        Assert.isTrue(name.equals("jay" ), "proxy failed" );
     }
 }

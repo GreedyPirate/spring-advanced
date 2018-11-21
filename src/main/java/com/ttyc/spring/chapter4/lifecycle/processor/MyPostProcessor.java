@@ -7,7 +7,7 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 public class MyPostProcessor implements BeanPostProcessor {
     @Override
     public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-        if(beanName.equals("car")){
+        if (beanName.equals("car" )) {
             Car car = (Car) bean;
             System.out.println("BeanPostProcessor Before bean Initialization : " + car.getBeanName());
         }
@@ -16,7 +16,7 @@ public class MyPostProcessor implements BeanPostProcessor {
 
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-        if(beanName.equals("car")){
+        if (beanName.equals("car" )) {
             Car car = (Car) bean;
             System.out.println("BeanPostProcessor After bean Initialization : " + car.getBeanName());
         }

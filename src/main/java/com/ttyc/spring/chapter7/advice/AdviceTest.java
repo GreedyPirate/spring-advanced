@@ -7,9 +7,9 @@ import org.springframework.util.Assert;
 
 public class AdviceTest {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("chapter7/spring.xml");
-        UserDao userDao = (UserDao) context.getBean("proxyFactory");
+        ApplicationContext context = new ClassPathXmlApplicationContext("chapter7/spring.xml" );
+        UserDao userDao = (UserDao) context.getBean("proxyFactory" );
         userDao.getName();
-        Assert.isTrue(userDao.getClass().getSimpleName().contains("CGLIB"), "代理类不是CGLIB产生");
+        Assert.isTrue(userDao.getClass().getSimpleName().contains("CGLIB" ), "代理类不是CGLIB产生" );
     }
 }

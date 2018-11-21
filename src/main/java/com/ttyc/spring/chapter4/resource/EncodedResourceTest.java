@@ -12,8 +12,8 @@ import java.io.InputStream;
  */
 public class EncodedResourceTest {
     public static void main(String[] args) throws IOException {
-        Resource resource = new ClassPathResource("file/config.ini");
-        EncodedResource encodedResource = new EncodedResource(resource,"UTF-8");
+        Resource resource = new ClassPathResource("file/config.ini" );
+        EncodedResource encodedResource = new EncodedResource(resource, "UTF-8" );
         InputStream inputStream = encodedResource.getInputStream();
     }
 }

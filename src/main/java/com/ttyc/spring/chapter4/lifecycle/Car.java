@@ -32,22 +32,21 @@ public class Car implements BeanFactoryAware, BeanNameAware, ApplicationContextA
 
     @Override
     public void destroy() throws Exception {
-        System.out.println("bean destory");
+        System.out.println("bean destory" );
     }
 
     @Override
     public void afterPropertiesSet() throws Exception {
-        System.out.println("after all properties seted");
+        System.out.println("after all properties seted" );
     }
 
-    public void init(){
-        System.out.println("init - method");
+    public void init() {
+        System.out.println("init - method" );
     }
 
-    public void close(){
-        System.out.println("destroy - method");
+    public void close() {
+        System.out.println("destroy - method" );
     }
-
 
 
     public Car(String name, String color) {

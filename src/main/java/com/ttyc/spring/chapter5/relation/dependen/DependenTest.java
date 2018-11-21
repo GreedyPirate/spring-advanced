@@ -11,8 +11,8 @@ import org.springframework.util.Assert;
  */
 public class DependenTest {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("chapter5/spring.xml");
-        Car second = (Car) context.getBean("second");
-        Assert.notNull(second,"null object");
+        ApplicationContext context = new ClassPathXmlApplicationContext("chapter5/spring.xml" );
+        Car second = (Car) context.getBean("second" );
+        Assert.notNull(second, "null object" );
     }
 }

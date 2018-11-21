@@ -15,23 +15,23 @@ import java.util.ResourceBundle;
 public class ResourceBundleTest {
     public static void main(String[] args) {
         // 中文
-        ResourceBundle bundle = ResourceBundle.getBundle("chapter6/i18n/resource",Locale.CHINA);
-        String name = bundle.getString("name");
-        Assert.isTrue(name.equals("紫夜"),"error name");
+        ResourceBundle bundle = ResourceBundle.getBundle("chapter6/i18n/resource", Locale.CHINA);
+        String name = bundle.getString("name" );
+        Assert.isTrue(name.equals("紫夜" ), "error name" );
 
         // 英文
-        ResourceBundle us = ResourceBundle.getBundle("chapter6/i18n/resource",Locale.US);
-        String enName = us.getString("name");
-        Assert.isTrue(enName.equals("jay"),"error name");
+        ResourceBundle us = ResourceBundle.getBundle("chapter6/i18n/resource", Locale.US);
+        String enName = us.getString("name" );
+        Assert.isTrue(enName.equals("jay" ), "error name" );
 
         // pattern
-        Object[] param = {"紫夜", new Date(),1650};
-        String pattern = us.getString("pattern");
+        Object[] param = {"紫夜", new Date(), 1650};
+        String pattern = us.getString("pattern" );
         MessageFormat format = new MessageFormat(pattern);
         String ret = format.format(param);
         System.out.println(ret);
 
-        pattern = bundle.getString("pattern");
+        pattern = bundle.getString("pattern" );
         format = new MessageFormat(pattern);
         ret = format.format(param);
         System.out.println(ret);

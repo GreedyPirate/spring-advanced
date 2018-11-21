@@ -9,13 +9,13 @@ import java.util.Locale;
 
 public class MessageResourceTest {
     public static void main(String[] args) throws InterruptedException {
-        ApplicationContext context = new ClassPathXmlApplicationContext("chapter6/spring.xml");
-        MessageSource messageSource = (MessageSource) context.getBean("messageSource");
+        ApplicationContext context = new ClassPathXmlApplicationContext("chapter6/spring.xml" );
+        MessageSource messageSource = (MessageSource) context.getBean("messageSource" );
         String name = messageSource.getMessage("name", null, Locale.CHINA);
-        Assert.isTrue(name.equals("紫夜"), "error name");
+        Assert.isTrue(name.equals("紫夜" ), "error name" );
 
         String enName = messageSource.getMessage("name", null, Locale.US);
-        Assert.isTrue(enName.equals("jay"), "error en name");
+        Assert.isTrue(enName.equals("jay" ), "error en name" );
 
         /*TimeUnit.SECONDS.sleep(10);
         enName = messageSource.getMessage("name", null, Locale.US);

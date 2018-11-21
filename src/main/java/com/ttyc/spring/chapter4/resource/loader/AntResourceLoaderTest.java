@@ -12,7 +12,7 @@ import java.io.IOException;
 public class AntResourceLoaderTest {
     public static void main(String[] args) throws IOException {
         ResourcePatternResolver resolver = new PathMatchingResourcePatternResolver();
-        Resource[] resources = resolver.getResources("classpath*:file/*.*");
+        Resource[] resources = resolver.getResources("classpath*:file/*.*" );
         if (resources != null && resources.length > 0) {
             for (int i = 0; i < resources.length; i++) {
                 Resource resource = resources[i];

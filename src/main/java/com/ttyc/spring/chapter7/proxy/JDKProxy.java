@@ -16,7 +16,7 @@ public class JDKProxy implements InvocationHandler {
 
     @Override
     public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
-        StopWatch stopWatch = new StopWatch("jdk proxy test:");
+        StopWatch stopWatch = new StopWatch("jdk proxy test:" );
         stopWatch.start(method.getName());
         TimeUnit.SECONDS.sleep(1);
 

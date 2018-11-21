@@ -8,7 +8,7 @@ public class LifeCycleTest {
     public static void main(String[] args) {
         ApplicationContext context = new AnnotationConfigApplicationContext(LifeCycleConfig.class);
         ConfigurableListableBeanFactory beanFactory = ((AnnotationConfigApplicationContext) context).getBeanFactory();
-        Car car = (Car) context.getBean("car");
+        Car car = (Car) context.getBean("car" );
         System.out.println(car.getName());
         System.out.println(car.getBeanName());
         ((AnnotationConfigApplicationContext) context).close();

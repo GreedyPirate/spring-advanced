@@ -20,7 +20,8 @@
     <!-- 静态工厂指定静态方法即可 -->
     <bean id="staticCar" class="com.ttyc.spring.chapter5.inject.factory.StaticCarFactory" factory-method="createCar"/>
 
-    <bean id="oneCar" scope="prototype" class="com.ttyc.spring.chapter5.inject.prototype.Car" p:name="bench" p:color="red"/>
+    <bean id="oneCar" scope="prototype" class="com.ttyc.spring.chapter5.inject.prototype.Car" p:name="bench"
+          p:color="red"/>
     <bean id="bigBoss" class="com.ttyc.spring.chapter5.inject.prototype.MultiCar">
         <lookup-method name="getCar" bean="oneCar"/>
     </bean>

@@ -12,8 +12,8 @@ public class Car implements FactoryBean<Car> {
     @Override
     public Car getObject() throws Exception {
         Car car = new Car();
-        if(!StringUtils.isEmpty(this.name)){
-            String name = this.name.replaceAll(",", "-");
+        if (!StringUtils.isEmpty(this.name)) {
+            String name = this.name.replaceAll(",", "-" );
             car.setName(name);
         }
         car.setColor(color);

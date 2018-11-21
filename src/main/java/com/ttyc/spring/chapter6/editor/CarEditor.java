@@ -8,9 +8,9 @@ import java.beans.PropertyEditorSupport;
 public class CarEditor extends PropertyEditorSupport {
     @Override
     public void setAsText(String text) throws IllegalArgumentException {
-        Assert.isTrue(!StringUtils.isEmpty(text) && text.contains(","), "illegal property");
+        Assert.isTrue(!StringUtils.isEmpty(text) && text.contains("," ), "illegal property" );
 
-        String[] val = text.split(",");
+        String[] val = text.split("," );
 
         Car car = new Car();
         car.setName(val[0]);

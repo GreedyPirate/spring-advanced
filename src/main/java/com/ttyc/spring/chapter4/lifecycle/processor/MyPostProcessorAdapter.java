@@ -9,7 +9,7 @@ import java.beans.PropertyDescriptor;
 public class MyPostProcessorAdapter extends InstantiationAwareBeanPostProcessorAdapter {
     @Override
     public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
-        if(beanName.equals("car")){
+        if (beanName.equals("car" )) {
             System.out.println("before bean Instantiation: bean class type is " + beanClass.getName() + ", bean name is " + beanName);
         }
 
@@ -23,8 +23,8 @@ public class MyPostProcessorAdapter extends InstantiationAwareBeanPostProcessorA
 
     @Override
     public PropertyValues postProcessPropertyValues(PropertyValues pvs, PropertyDescriptor[] pds, Object bean, String beanName) throws BeansException {
-        if(beanName.equals("car")){
-            System.out.println("post Process Property Values");
+        if (beanName.equals("car" )) {
+            System.out.println("post Process Property Values" );
         }
 
         return null;

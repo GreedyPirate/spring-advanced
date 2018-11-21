@@ -10,8 +10,9 @@ import java.util.concurrent.TimeUnit;
 
 public class CglibProxy implements MethodInterceptor {
     private Enhancer enhancer = new Enhancer();
+
     // 创建父类的子类代理对象
-    public Object getProxy(Class c){
+    public Object getProxy(Class c) {
         enhancer.setSuperclass(c);
         enhancer.setCallback(this);
         return enhancer.create();
@@ -20,7 +21,7 @@ public class CglibProxy implements MethodInterceptor {
     // 代理过程
     @Override
     public Object intercept(Object o, Method method, Object[] args, MethodProxy methodProxy) throws Throwable {
-        StopWatch stopWatch = new StopWatch("cglib proxy test:");
+        StopWatch stopWatch = new StopWatch("cglib proxy test:" );
         stopWatch.start(method.getName());
         TimeUnit.SECONDS.sleep(1);
 

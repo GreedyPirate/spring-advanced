@@ -17,7 +17,7 @@ public class FormatTest {
         System.out.println(dateFormat.format(new Date()));
 
         String pattern = "我的名字是{0}, 现在是{1,time,short}, 我的房租是{2}元";
-        Object[] param = {"紫夜", new Date(),1650};
+        Object[] param = {"紫夜", new Date(), 1650};
         MessageFormat messageFormat = new MessageFormat(pattern, Locale.CHINA);
         String result = messageFormat.format(param);
         System.out.println(result);

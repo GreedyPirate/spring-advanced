@@ -11,8 +11,8 @@ import org.springframework.util.Assert;
  */
 public class FactoryBeanTest {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("chapter5/spring.xml");
-        Car car = (Car) context.getBean("beanctl");
-        Assert.isTrue(car.getName().contains("-"), "new failed");
+        ApplicationContext context = new ClassPathXmlApplicationContext("chapter5/spring.xml" );
+        Car car = (Car) context.getBean("beanctl" );
+        Assert.isTrue(car.getName().contains("-" ), "new failed" );
     }
 }

@@ -7,6 +7,6 @@ import java.lang.reflect.Method;
 public class DaoAfterAdvice implements AfterReturningAdvice {
     @Override
     public void afterReturning(Object returnValue, Method method, Object[] args, Object target) throws Throwable {
-        System.out.println("sql execute completed");
+        System.out.println("sql execute completed" );
     }
 }

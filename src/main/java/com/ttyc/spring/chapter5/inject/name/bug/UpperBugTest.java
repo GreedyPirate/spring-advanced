@@ -8,8 +8,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class UpperBugTest {
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("chapter5/spring.xml");
-        UpperCase upper = (UpperCase) context.getBean("upper");
+        ApplicationContext context = new ClassPathXmlApplicationContext("chapter5/spring.xml" );
+        UpperCase upper = (UpperCase) context.getBean("upper" );
         System.out.println(upper.getCPU());
     }
 }

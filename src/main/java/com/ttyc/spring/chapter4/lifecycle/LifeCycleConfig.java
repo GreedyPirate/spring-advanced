@@ -7,18 +7,18 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 public class LifeCycleConfig {
-    @Bean(initMethod = "init", destroyMethod = "close")
+    @Bean(initMethod = "init", destroyMethod = "close" )
     Car car() {
-        return new Car("bench","red");
+        return new Car("bench", "red" );
     }
 
     @Bean
-    MyPostProcessor myPostProcessor(){
+    MyPostProcessor myPostProcessor() {
         return new MyPostProcessor();
     }
 
     @Bean
-    MyPostProcessorAdapter myPostProcessorAdapter(){
+    MyPostProcessorAdapter myPostProcessorAdapter() {
         return new MyPostProcessorAdapter();
     }
 }

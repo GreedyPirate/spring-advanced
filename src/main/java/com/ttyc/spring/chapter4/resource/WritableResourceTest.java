@@ -13,6 +13,6 @@ public class WritableResourceTest {
 
         WritableResource resource = new PathResource(path);
         OutputStream outputStream = resource.getOutputStream();
-        IOUtils.write("test WritableResource", outputStream, "UTF-8");
+        IOUtils.write("test WritableResource", outputStream, "UTF-8" );
     }
 }

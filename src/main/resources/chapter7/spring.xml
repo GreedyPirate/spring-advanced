@@ -13,6 +13,8 @@
     <bean id="introduUserDao" class="com.ttyc.spring.chapter7.advice.introduction.IntroductionAdvice"/>
 
     <!-- 可以配置多个advice，多个target bean -->
-    <bean id="proxyFactory" class="org.springframework.aop.framework.ProxyFactoryBean" p:proxyInterfaces="com.ttyc.spring.chapter7.proxy.helper.UserDao"
-          p:interceptorNames="beforeDao,afterDao,throwsDao,introduUserDao" p:target-ref="target" p:optimize="true" p:proxyTargetClass="true"/>
+    <bean id="proxyFactory" class="org.springframework.aop.framework.ProxyFactoryBean"
+          p:proxyInterfaces="com.ttyc.spring.chapter7.proxy.helper.UserDao"
+          p:interceptorNames="beforeDao,afterDao,throwsDao,introduUserDao" p:target-ref="target" p:optimize="true"
+          p:proxyTargetClass="true"/>
 </beans>
