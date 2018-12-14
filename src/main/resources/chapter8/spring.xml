@@ -7,6 +7,7 @@
 
     <bean id="aop" class="com.ttyc.spring.chapter8.execution.ExecutionAspect"/>
     <bean id="userService" class="com.ttyc.spring.chapter8.service.UserServiceImpl"/>
+    <bean id="superUserService" class="com.ttyc.spring.chapter8.service.SuperUserServiceImpl"/>
 
     <aop:aspectj-autoproxy/>
 </beans>

@@ -8,7 +8,6 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.web.context.support.RequestHandledEvent;
 
 @SpringBootApplication
-@EnableAspectJAutoProxy(proxyTargetClass=true)
 public class SpringAdvancedApplication {
 
     public static void main(String[] args) {
